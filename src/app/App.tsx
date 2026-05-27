@@ -656,8 +656,8 @@ function MapScreen({
       leafletRef.current = map;
 
       L.tileLayer(
-        "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
-        { maxZoom: 19, attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>' }
+        "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+        { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>' }
       ).addTo(map);
 
       // Create zone markers
@@ -1602,7 +1602,10 @@ function RouteScreen({
         attributionControl: false
       });
       routeLeafletRef.current = map;
-      L.tileLayer("https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png", { maxZoom: 19 }).addTo(map);
+      L.tileLayer(
+        "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+        { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>' }
+      ).addTo(map);
     });
     return () => {
       if (routeLeafletRef.current) {
